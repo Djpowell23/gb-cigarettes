@@ -1,5 +1,6 @@
 ## Dependencies
 - lj-inventory (configure your own inventory if it's different. same concept)
+- qb-policejob
 
 ## Insert into qb-policejob:client:evidence.lua
 
