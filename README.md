@@ -4,13 +4,17 @@
 ## Insert into qb-policejob:client:evidence.lua
 
 Under local StatusList
-    <!-- ['tobaccosmell'] = Lang:t('evidence.tobacco_smell'), -->
+```
+['tobaccosmell'] = Lang:t('evidence.tobacco_smell'),
+```
 
 
 ## Insert into qb-policejob:locales:en.lua
 
 Under evidence
+```
     tobacco_smell = 'Smells like tobacco',
+```
 
 
 ## Insert into lj-inventory:html:js:app.js
