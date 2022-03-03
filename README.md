@@ -1,3 +1,11 @@
+## Info
+- Useable item called "redwoodcigs" to be sold at your choosing
+- Redwood Cigarette Pack has 20 cigarettes inside
+- Use the pack of cigs to get a single cigarette out of it
+- Use the cigarette for minor, legal stress relief
+- Cigarette pack accurately reflects how many cigarettes are left
+- Pack deletes itself when the last cigarette is removed
+
 ## Dependencies
 - lj-inventory (configure your own inventory if it's different. same concept)
 - qb-policejob
