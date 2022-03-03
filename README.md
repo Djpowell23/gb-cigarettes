@@ -13,24 +13,31 @@ Under local StatusList
 
 Under evidence
 ```
-    tobacco_smell = 'Smells like tobacco',
+tobacco_smell = 'Smells like tobacco',
 ```
 
 
 ## Insert into lj-inventory:html:js:app.js
 
 Under FormatItemInfo
-    else if (itemData.name == "redwoodcigs") { // Cigarette Pack
-        $(".item-info-title").html("<p>" + itemData.label + "</p>");
-        $(".item-info-description").html(
-            "<p>" + itemData.info.uses + " cigarettes left.</p>"
-        );
+```
+else if (itemData.name == "redwoodcigs") { // Cigarette Pack
+    $(".item-info-title").html("<p>" + itemData.label + "</p>");
+    $(".item-info-description").html(
+        "<p>" + itemData.info.uses + " cigarettes left.</p>"
+    );
+```
 
 ## Insert into qb-core:shared:items.lua
-    -- Cigarettes
+Cigarettes
+```
 ['redwoodcigs'] 				 	= {['name'] = 'redwoodcigs', 			['label'] = 'Redwood Cigarettes', 	['weight'] = 250, 		["degrade"] = 1.0,		['type'] = 'item', 		['image'] = 'redwoodcigs.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Pack of Cigarettes, Made in USA'},
 ["cigarette"] 						= {["name"] = "cigarette",  	     	["label"] = "Cigarette",	 		["weight"] = 250, 		["type"] = "item", 		["image"] = "cigarette.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Smokeable Tobacco"},
+```
 
 ## Insert into lj-inventory:server:main.lua
-    elseif itemData["name"] == "redwoodcigs" then
-        info.uses = 20
+Look for QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)" and insert this
+```
+elseif itemData["name"] == "redwoodcigs" then
+    info.uses = 20
+```
