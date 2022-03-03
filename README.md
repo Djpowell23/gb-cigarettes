@@ -3,19 +3,19 @@
 
 ## Insert into qb-policejob:client:evidence.lua
 
--- Under local StatusList
-    -- ['tobaccosmell'] = Lang:t('evidence.tobacco_smell'),
+Under local StatusList
+    <!-- ['tobaccosmell'] = Lang:t('evidence.tobacco_smell'), -->
 
 
 ## Insert into qb-policejob:locales:en.lua
 
--- Under evidence
-    -- tobacco_smell = 'Smells like tobacco',
+Under evidence
+    tobacco_smell = 'Smells like tobacco',
 
 
 ## Insert into lj-inventory:html:js:app.js
 
--- Under FormatItemInfo
+Under FormatItemInfo
     else if (itemData.name == "redwoodcigs") { // Cigarette Pack
         $(".item-info-title").html("<p>" + itemData.label + "</p>");
         $(".item-info-description").html(
