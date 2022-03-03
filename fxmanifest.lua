@@ -1,0 +1,25 @@
+fx_version 'cerulean'
+game 'gta5'
+
+description 'Cigarettes as stress relief'
+author 'Goobastank'
+version '1.0.0'
+
+server_scripts {
+    "server/*.lua",
+}
+
+client_scripts {
+	"client/*.lua",
+}
+
+-- shared_script 'config.lua'
+
+-- escrow_ignore {
+--     'config.lua',
+--     'image',
+--     'readme.txt'
+-- }
+
+lua54 'yes'
+-- dependency '/assetpacks'
