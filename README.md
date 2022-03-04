@@ -3,12 +3,13 @@
 - Redwood Cigarette Pack has 20 cigarettes inside
 - Use the pack of cigs to get a single cigarette out of it
 - Use the cigarette for minor, legal stress relief
-- Cigarette pack accurately reflects how many cigarettes are left
-- Pack deletes itself when the last cigarette is removed
+- Cigarette pack accurately reflects how many cigarettes are left (when spawned in)
+- Pack deletes itself when the last cigarette is removed (when pack was spawned in)
 
 ## Dependencies
 - lj-inventory (configure your own inventory if it's different. same concept)
 - qb-policejob
+- dpemotes
 
 ## Insert into qb-policejob:client:evidence.lua
 
@@ -48,4 +49,41 @@ Look for QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)" and insert 
 ```
 elseif itemData["name"] == "redwoodcigs" then
     info.uses = 20
+```
+
+## Insert into dpemotes:Client:Emote.lua
+```
+RegisterNetEvent('animations:client:SmokeCig')
+AddEventHandler('animations:client:SmokeCig', function()
+  SmokingWeed = true
+  Citizen.CreateThread(function()
+    while SmokingWeed do
+      Citizen.Wait(10000)
+      TriggerServerEvent('hud:server:RelieveStress', math.random(2, 4))
+      RelieveCount = RelieveCount + 1
+      if RelieveCount == 6 then
+        if ChosenDict == "MaleScenario" and IsInAnimation then
+          ClearPedTasksImmediately(PlayerPedId())
+          IsInAnimation = false
+          DebugPrint("Forced scenario exit")
+        elseif ChosenDict == "Scenario" and IsInAnimation then
+          ClearPedTasksImmediately(PlayerPedId())
+          IsInAnimation = false
+          DebugPrint("Forced scenario exit")
+        end
+
+        if IsInAnimation then
+          ClearPedTasks(PlayerPedId())
+          DestroyAllProps()
+          IsInAnimation = false
+        end
+
+        if SmokingWeed then
+          SmokingWeed = false
+          RelieveCount = 0
+        end
+      end
+    end
+  end)
+end)
 ```
