@@ -28,7 +28,7 @@ tobacco_smell = 'Smells like tobacco',
 
 Under FormatItemInfo
 ```
-else if (itemData.name == "redwoodcigs") { // Cigarette Pack
+{ else if (itemData.name == "redwoodcigs") // Cigarette Pack
     $(".item-info-title").html("<p>" + itemData.label + "</p>");
     $(".item-info-description").html(
         "<p>" + itemData.info.uses + " cigarettes left.</p>"
