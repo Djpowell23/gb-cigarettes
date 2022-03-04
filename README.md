@@ -33,6 +33,7 @@ else if (itemData.name == "redwoodcigs") { // Cigarette Pack
     $(".item-info-description").html(
         "<p>" + itemData.info.uses + " cigarettes left.</p>"
     );
+}
 ```
 
 ## Insert into qb-core:shared:items.lua
