@@ -1,3 +1,9 @@
+## Known Issues
+- When purchasing packs from qb-shops, there is no limit to the amount of cigs. Looking for fix
+
+## Welcome ideas/snippets
+- If anyone has a quick way to require a lighter in player's pocket in order to light a cigarette, I will gladly put it in
+
 ## Info
 - Useable item called "redwoodcigs" to be sold at your choosing
 - Redwood Cigarette Pack has 20 cigarettes inside
@@ -11,18 +17,11 @@
 - qb-policejob
 - dpemotes
 
-## Insert into qb-policejob:client:evidence.lua
-
-Under local StatusList
+## Insert into qb-core:shared:items.lua
+Cigarettes
 ```
-['tobaccosmell'] = Lang:t('evidence.tobacco_smell'),
-```
-
-## Insert into qb-policejob:locales:en.lua
-
-Under evidence
-```
-tobacco_smell = 'Smells like tobacco',
+['redwoodcigs'] 				 	= {['name'] = 'redwoodcigs', 			['label'] = 'Redwood Cigarettes', 	['weight'] = 250, 		["degrade"] = 1.0,		['type'] = 'item', 		['image'] = 'redwoodcigs.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Pack of Cigarettes, Made in USA'},
+["cigarette"] 						= {["name"] = "cigarette",  	     	["label"] = "Cigarette",	 		["weight"] = 250, 		["type"] = "item", 		["image"] = "cigarette.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Smokeable Tobacco"},
 ```
 
 ## Insert into lj-inventory:html:js:app.js
@@ -37,21 +36,28 @@ else if (itemData.name == "redwoodcigs") { // Cigarette Pack
 }
 ```
 
-## Insert into qb-core:shared:items.lua
-Cigarettes
-```
-['redwoodcigs'] 				 	= {['name'] = 'redwoodcigs', 			['label'] = 'Redwood Cigarettes', 	['weight'] = 250, 		["degrade"] = 1.0,		['type'] = 'item', 		['image'] = 'redwoodcigs.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Pack of Cigarettes, Made in USA'},
-["cigarette"] 						= {["name"] = "cigarette",  	     	["label"] = "Cigarette",	 		["weight"] = 250, 		["type"] = "item", 		["image"] = "cigarette.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Smokeable Tobacco"},
-```
-
-## Insert into lj-inventory:server:main.lua
+## Insert into lj-inventory:server:main.lua (Gives the item it's info.uses for inventory)
 Look for QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)" and insert this
 ```
 elseif itemData["name"] == "redwoodcigs" then
     info.uses = 20
 ```
 
-## Insert into dpemotes:Client:Emote.lua
+## Insert into qb-policejob:client:evidence.lua (no real meaning, just a new status effect)
+
+Under local StatusList
+```
+['tobaccosmell'] = Lang:t('evidence.tobacco_smell'),
+```
+
+## Insert into qb-policejob:locales:en.lua (no real meaning, just a new status effect)
+
+Under evidence
+```
+tobacco_smell = 'Smells like tobacco',
+```
+
+## Insert into dpemotes:Client:Emote.lua (stress relief and animation)
 ```
 RegisterNetEvent('animations:client:SmokeCig')
 AddEventHandler('animations:client:SmokeCig', function()
