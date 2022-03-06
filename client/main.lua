@@ -38,7 +38,7 @@ AddEventHandler('cigarettes:client:UseCigarette', function()
 		disableMouse = false,
 		disableCombat = true,
     }, {
-        TriggerEvent('animations:client:EmoteCommandStart', {"smoke"})
+        -- TriggerEvent('animations:client:EmoteCommandStart', {"smoke"})
     }, {}, {}, function() -- Done
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["cigarette"], "remove") -- update cig count
         if IsPedInAnyVehicle(PlayerPedId(), false) then
