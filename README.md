@@ -2,7 +2,7 @@
 - When purchasing packs from qb-shops, there is no limit to the amount of cigs. Looking for fix
 
 ## Welcome ideas/snippets
-- If anyone has a quick way to require a lighter in player's pocket in order to light a cigarette, I will gladly put it in
+- Info how to add these items to qb-shops without losing 20 cigs per pack functionality
 
 ## Info
 - Useable item called "redwoodcigs" to be sold at your choosing
