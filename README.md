@@ -93,3 +93,15 @@ AddEventHandler('animations:client:SmokeCig', function()
   end)
 end)
 ```
+
+## When putting into shops, add this into the config.lua of qb-shops
+```
+  name = "redwoodcigs",
+  price = 200,
+  amount = 5000,
+  info = {
+      uses = 20
+  },
+  type = "item",
+  slot = 11,
+```
