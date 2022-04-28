@@ -13,13 +13,6 @@ client_scripts {
 	"client/*.lua",
 }
 
--- shared_script 'config.lua'
-
--- escrow_ignore {
---     'config.lua',
---     'image',
---     'readme.txt'
--- }
+shared_script 'config.lua'
 
 lua54 'yes'
--- dependency '/assetpacks'
