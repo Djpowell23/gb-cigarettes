@@ -1,9 +1,3 @@
-## Known Issues
-- When purchasing packs from qb-shops, there is no limit to the amount of cigs. Looking for fix
-
-## Welcome ideas/snippets
-- Info how to add these items to qb-shops without losing 20 cigs per pack functionality
-
 ## Info
 - Useable item called "redwoodcigs" to be sold at your choosing
 - Redwood Cigarette Pack has 20 cigarettes inside
