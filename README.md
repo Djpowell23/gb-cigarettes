@@ -51,43 +51,6 @@ Under evidence
 tobacco_smell = 'Smells like tobacco',
 ```
 
-## Insert into dpemotes:Client:Emote.lua (stress relief and animation)
-```
-RegisterNetEvent('animations:client:SmokeCig')
-AddEventHandler('animations:client:SmokeCig', function()
-  SmokingWeed = true
-  Citizen.CreateThread(function()
-    while SmokingWeed do
-      Citizen.Wait(10000)
-      TriggerServerEvent('hud:server:RelieveStress', math.random(2, 4))
-      RelieveCount = RelieveCount + 1
-      if RelieveCount == 6 then
-        if ChosenDict == "MaleScenario" and IsInAnimation then
-          ClearPedTasksImmediately(PlayerPedId())
-          IsInAnimation = false
-          DebugPrint("Forced scenario exit")
-        elseif ChosenDict == "Scenario" and IsInAnimation then
-          ClearPedTasksImmediately(PlayerPedId())
-          IsInAnimation = false
-          DebugPrint("Forced scenario exit")
-        end
-
-        if IsInAnimation then
-          ClearPedTasks(PlayerPedId())
-          DestroyAllProps()
-          IsInAnimation = false
-        end
-
-        if SmokingWeed then
-          SmokingWeed = false
-          RelieveCount = 0
-        end
-      end
-    end
-  end)
-end)
-```
-
 ## When putting into shops, add this into the config.lua of qb-shops
 ```
   name = "redwoodcigs",
