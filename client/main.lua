@@ -46,6 +46,10 @@ AddEventHandler('cigarettes:client:UseCigarette', function()
         else
             TriggerEvent('animations:client:EmoteCommandStart', {"smoke"})
         end
+	for i = 1, 5, 1 do -- U can edit 5 for amount you want
+            Wait(5000) -- Wait 5 seconds to exec event.
+            TriggerServerEvent('hud:server:RelieveStress', math.random(2, 4)) -- Remove random value of stress.
+        end
         TriggerEvent("evidence:client:SetStatus", "tobaccosmell", 300)
         TriggerEvent('animations:client:SmokeCig')
     end)
