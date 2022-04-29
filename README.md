@@ -12,7 +12,6 @@
 ## Dependencies
 - lj-inventory (configure your own inventory if it's different. same concept)
 - qb-policejob
-- dpemotes
 
 ## Insert into qb-core:shared:items.lua
 Cigarettes
