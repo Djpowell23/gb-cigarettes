@@ -1,13 +1,6 @@
 ## Update
  - If you added the old snippet into dpemotes, you can delete that as it is handled internally now. (Thanks to r0shi)
 
-## Current Issues
- - Some users are experiencing this error when buying from shop:
-```
-attempt to perform arithmetic on a nil value (field 'uses')
-```
- - I cannot recreate this error so if someone experiences it and knows what to fix, please PR it
-
 ## Info
 - Useable item called "redwoodcigs" to be sold at your choosing
 - Redwood Cigarette Pack has 20 cigarettes inside
