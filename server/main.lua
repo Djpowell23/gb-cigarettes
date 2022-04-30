@@ -7,6 +7,12 @@ QBCore.Functions.CreateUseableItem("redwoodcigs", function(source, item)
     TriggerClientEvent('cigarettes:client:UseCigPack', src, item)
 end)
 
+QBCore.Functions.CreateUseableItem("cardiaquecigs", function(source, item)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    TriggerClientEvent('cigarettes:client:UseCigPack', src, item)
+end)
+
 -- Create the cigarette
 QBCore.Functions.CreateUseableItem("cigarette", function(source, item)
     local src = source
