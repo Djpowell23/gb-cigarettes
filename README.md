@@ -2,7 +2,7 @@
  - If you added the old snippet into dpemotes, you can delete that as it is handled internally now. (Thanks to r0shi)
 
 ## Info
-- Useable item called "redwoodcigs" and "cardiaquecigs" to be sold at your choosing
+- Useable item called "redwoodcigs", "cardiaquecigs", and "yukoncigs" to be sold at shops of your choosing
 - Cigarette Packs has 20 cigarettes inside
 - Use the pack of cigs to get a single cigarette out of it
 - Use the cigarette for minor, legal stress relief
@@ -18,7 +18,9 @@
 -- Cigarettes
 ['redwoodcigs'] 				 	= {['name'] = 'redwoodcigs', 			['label'] = 'Redwood Cigarettes', 	['weight'] = 250, 		["degrade"] = 1.0,		['type'] = 'item', 		['image'] = 'redwoodcigs.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Pack of Cigarettes, Made in USA'},
 ['cardiaquecigs'] 				 	= {['name'] = 'cardiaquecigs', 			['label'] = 'Cardiaque Cigarettes', ['weight'] = 250, 		["degrade"] = 1.0,		['type'] = 'item', 		['image'] = 'cardiaquecigs.png', 			['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Pack of Cigarettes, Made in USA'},
+['yukoncigs'] 				 		= {['name'] = 'yukoncigs', 				['label'] = 'Yukon Cigarettes', 	['weight'] = 250, 		["degrade"] = 1.0,		['type'] = 'item', 		['image'] = 'yukoncigs.png', 				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Pack of Menthol Cigarettes, Made in USA'},
 ["cigarette"] 						= {["name"] = "cigarette",  	     	["label"] = "Cigarette",	 		["weight"] = 250, 		["type"] = "item", 		["image"] = "cigarette.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Smokeable Tobacco"},
+
 
 ```
 
@@ -36,6 +38,11 @@ else if (itemData.name == "redwoodcigs") { // Cigarette Pack
     $(".item-info-description").html(
         "<p>" + itemData.info.uses + " cigarettes left.</p>"
     );
+} else if (itemData.name == "yukoncigs") { // Cigarette Pack
+    $(".item-info-title").html("<p>" + itemData.label + "</p>");
+    $(".item-info-description").html(
+        "<p>" + itemData.info.uses + " cigarettes left.</p>"
+    );
 }
 ```
 
@@ -45,6 +52,8 @@ Look for QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)" and insert 
 elseif itemData["name"] == "redwoodcigs" then
     info.uses = 20
 elseif itemData["name"] == "cardiaquecigs" then
+    info.uses = 20
+elseif itemData["name"] == "yukoncigs" then
     info.uses = 20
 ```
 
@@ -83,5 +92,15 @@ tobacco_smell = 'Smells like tobacco',
         },
         type = "item",
         slot = 12,
+    },
+    [13] = {
+        name = "yukoncigs",
+        price = 200,
+        amount = 5000,
+        info = {
+            uses = 20
+        },
+        type = "item",
+        slot = 13,
     },
 ```
