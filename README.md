@@ -1,5 +1,5 @@
-## Update
- - If you added the old snippet into dpemotes, you can delete that as it is handled internally now. (Thanks to r0shi)
+## Looking to Fix (PRs welcome)
+ - Currently, if you spam a pack of cigarettes, it removes the count but you only get the 1 when the progressbar completes. Looking to disable the ability to use it again until you are not busy.
 
 ## Info
 - Useable item called "redwoodcigs", "cardiaquecigs", and "yukoncigs" to be sold at shops of your choosing
