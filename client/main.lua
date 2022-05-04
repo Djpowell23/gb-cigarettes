@@ -2,7 +2,6 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 local cigpackHp = 20
 local cigpackData = {}
-local useing = false
 
 -- Cigarette Pack
 RegisterNetEvent('cigarettes:client:UseCigPack', function(ItemData) -- On Item Use (registered server side)
