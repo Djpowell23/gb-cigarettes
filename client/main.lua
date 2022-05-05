@@ -20,13 +20,13 @@ RegisterNetEvent('cigarettes:client:UseCigPack', function(ItemData) -- On Item U
         QBCore.Functions.Notify("You got a cigarette from the pack", "success")
         TriggerServerEvent('QBCore:Server:AddItem', "cigarette", 1) -- give cigarette from pack
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["cigarette"], "add")
+        cigpackHp = ItemData.info.uses
+        cigpackData = ItemData
+        TriggerServerEvent("cigarettes:server:RemoveCigarette", cigpackHp, cigpackData)
         end, function()
         QBCore.Functions.Notify("Cancelled...", "error")
     end)
     LocalPlayer.state:set("inv_busy", false, true)
-    cigpackHp = ItemData.info.uses
-    cigpackData = ItemData
-    TriggerServerEvent("cigarettes:server:RemoveCigarette", cigpackHp, cigpackData)
 end)
 
 -- Cigarette Use
