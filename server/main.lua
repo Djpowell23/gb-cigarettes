@@ -45,3 +45,10 @@ RegisterNetEvent('cigarettes:server:RemoveCigarette', function(hp, data)
         Player.Functions.SetInventory(Player.PlayerData.items)
     end
 end)
+
+-- Cigarette Pack Opened
+RegisterNetEvent('cigarettes:server:addCigarette', function(hp, data)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem("cigarette", 1)
+end)

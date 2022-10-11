@@ -18,7 +18,7 @@ RegisterNetEvent('cigarettes:client:UseCigPack', function(ItemData) -- On Item U
     }, {}, {}, function() -- Done
         StopAnimTask(playerPed, "amb@world_human_clipboard@male@idle_a", "idle_c", 1.0)
         QBCore.Functions.Notify("You got a cigarette from the pack", "success")
-        TriggerServerEvent('QBCore:Server:AddItem', "cigarette", 1) -- give cigarette from pack
+        TriggerServerEvent('cigarettes:server:addCigarette')
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["cigarette"], "add")
         cigpackHp = ItemData.info.uses
         cigpackData = ItemData
